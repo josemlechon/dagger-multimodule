@@ -1,20 +1,20 @@
+import com.jml.dagger.modules.conf.Deps
+import com.jml.dagger.modules.conf.Config
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
-        applicationId "com.josemlechon.feature1"
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.jml.dagger.modules.feature1"
+        minSdkVersion Config.minDsk
+        targetSdkVersion Config.targetSDK
+        versionCode Config.version
+        versionName Config.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner Config.testReunner
     }
 
     buildTypes {
@@ -24,14 +24,21 @@ android {
         }
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1-alpha01'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1-alpha01'
+
+    implementation Deps.Tools.kotlin_stdlib
+    implementation Deps.Android.appcompat
+    implementation Deps.Android.constraing_layout
+
+    implementation Deps.Dagger.dagger
+
+    testImplementation Deps.Test.junit
+    androidTestImplementation Deps.Test.runner
+    androidTestImplementation Deps.Test.espresso_core
 }

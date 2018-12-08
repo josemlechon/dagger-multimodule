@@ -1,7 +1,8 @@
-package com.josemlechon.feature1
+package com.jml.dagger.modules.feature1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.josemlechon.feature1.R
 
 class FeatureOneMainActivity : AppCompatActivity() {
 

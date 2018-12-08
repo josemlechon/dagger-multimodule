@@ -7,4 +7,6 @@ object Versions {
     object Config {
         const val GRADLE = "3.2.1"
     }
+
+    const val DAGGER = "2.19"
 }

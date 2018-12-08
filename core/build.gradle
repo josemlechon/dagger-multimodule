@@ -3,7 +3,7 @@ import com.jml.dagger.modules.conf.*
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion Config.targetSDK
 
     defaultConfig {
         minSdkVersion Config.minDsk
@@ -11,8 +11,7 @@ android {
         versionCode Config.version
         versionName Config.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner Config.testReunner
     }
 
     buildTypes {
@@ -22,10 +21,14 @@ android {
         }
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
 
+    implementation Deps.Tools.kotlin_stdlib
     implementation  Deps.Android.appcompat
     testImplementation Deps.Test.junit
     androidTestImplementation Deps.Test.runner

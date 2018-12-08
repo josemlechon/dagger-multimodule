@@ -5,4 +5,6 @@ object Config{
     const val targetSDK = 28
     const val version = 1
     const val versionName = "1.0"
+
+    const val testReunner = "androidx.test.runner.AndroidJUnitRunner"
 }

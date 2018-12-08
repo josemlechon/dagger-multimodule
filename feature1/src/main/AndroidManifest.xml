@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".FeatureOneMainActivity">
+        <activity android:name="com.jml.dagger.modules.feature1.FeatureOneMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
